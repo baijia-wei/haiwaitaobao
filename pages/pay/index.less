@@ -1,0 +1,70 @@
+/* pages/pay/index.wxss */
+
+.cart_item_right {
+  padding: 30rpx;
+  position: relative;
+  margin-top: 30rpx;
+  .count_group {
+    position: absolute;
+    right: 20rpx;
+    bottom: 30rpx;
+    min-width: 100rpx;
+    .count_group_number {
+      &::before {
+        content: "X";
+
+        font-size: 40%;
+      }
+    }
+  }
+}
+.bottom {
+  width: 750rpx;
+  height: 82rpx;
+  background-color: #fff;
+  border-top: 1px solid var(--borderColor);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  &_left {
+    display: flex;
+    align-items: center;
+  }
+  &_group {
+    display: flex;
+    align-items: center;
+    margin-right: 20rpx;
+    &_text {
+      color: #666;
+      font-size: 80%;
+    }
+    &_price {
+      color: var(--pimaryColor);
+      &::before {
+        content: "¥";
+        font-size: 80%;
+      }
+    }
+  }
+  &_toPay {
+    min-width: 150rpx;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+    height: 52rpx;
+    border-radius: 30rpx;
+    color: #fff;
+    background-color: var(--pimaryColor);
+    font-size: 22rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.disabled {
+      background-color: rgb(54, 54, 52);
+    }
+  }
+}

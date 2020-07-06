@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "search": "/compoments/search/index",
+    "goodslist": "/compoments/goodslist/index"
+  },
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "商品列表"
+}

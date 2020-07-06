@@ -1,0 +1,43 @@
+<view class="cart">
+  <block wx:for="{{  cart  }}" wx:key="goods_id">
+    <!-- 购物车单个数据 -->
+    <view class="cart_item">
+      <!-- 左边：按钮 -->
+      <view class="cart_item_left" bindtap="changeItemSelect" data-index="{{ index }}">
+        <!-- 单选框，通过 checked 属性展示是否选中 -->
+        <radio class="cart_item_left_radio" checked="{{ item.isSelect }}" color="#eb4450"></radio>
+      </view>
+      <!-- 右边：商品展示 + 计数器 -->
+      <view class="cart_item_right">
+        <!-- 调用自定义组件展示商品 -->
+        <goodslist item="{{ item }}" />
+        <!-- 商品计算器：定位上去 -->
+        <view class="count_group">
+          <!-- 减号 -->
+          <view bindtap="changeItemCount" data-index="{{ index }}" data-number="{{ -1 }}" class="count_group_btn iconfont icon-iconset0187"></view>
+          <view class="count_group_number">{{ item.count }}</view>
+          <!-- 加号 -->
+          <view bindtap="changeItemCount" data-index="{{ index }}" data-number="{{ 1 }}" class="count_group_btn iconfont icon-iconset0186"></view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- 如果购物车数组长度为 0 的时候，就显示空购物提示 -->
+<view class="cart_empty {{ cart.length === 0 && bl === false  ? 'show' : ''  }}">
+  <image class="cart_empty_image" src="/images/cart_empty.gif" />
+  <navigator class="cart_empty_btn" url="/pages/index/index" open-type="switchTab">去首页看看</navigator>
+</view>
+<view class="bottom">
+  <view class="bottom_left">
+    <view class="bottom_group" bindtap="changeAllSelect">
+      <radio checked="{{ allSelect }}" color="#eb4450"></radio>
+      <text class="bottom_group_text">全选</text>
+    </view>
+    <view class="bottom_group">
+      <text>合计：</text>
+      <text class="bottom_group_price">{{ totalPrice }}</text>
+    </view>
+  </view>
+  <view class="bottom_toPay" bindtap="goToPay">去结算({{selectCount}})</view>
+</view>

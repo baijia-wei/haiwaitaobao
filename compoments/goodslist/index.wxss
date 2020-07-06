@@ -1,0 +1,25 @@
+.floor {
+  margin-top: 20rpx;
+  display: flex;
+}
+.floor_information {
+  display: flex;
+  flex: 1;
+  font-size: 12px;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.floor_information .floor_price {
+  color: rgb(255, 0, 0);
+  font-size: 12px;
+}
+.floor .floor_image {
+  width: 191rpx;
+  height: 191rpx;
+  background-color: crimson;
+}
+.floor_price::before {
+  content: "￥";
+  color: rgb(255, 0, 0);
+  font-size: 16px;
+}

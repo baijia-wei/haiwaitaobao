@@ -1,0 +1,7 @@
+/* 全局导入 */
+@import "style/font.wxss";
+page {
+  --pimaryColor: #ea4350;
+  --fontColor: #333;
+  --grayColor: #666;
+}

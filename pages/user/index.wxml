@@ -1,0 +1,25 @@
+<view class="header">
+  <view class="header_cent">
+    <image src="/images/331.png" alt="" class="header_portrait" />
+    <view class="text">限量版</view>
+  </view>
+</view>
+<view class="mian">
+  <view class="mian_auto">
+    <view class="iconfont icon-fukuan">
+      <view class="font">代付款</view>
+    </view>
+    <view class="iconfont icon-daishouhuo">
+      <view class="font">退款/退货</view>
+    </view>
+    <view class="iconfont icon-tuikuan1">
+      <view class="font">代收货</view>
+    </view>
+    <navigator url="/pages/order/index">
+      <view class="iconfont icon-dingdan1">
+        <view class="font">全部订单</view>
+      </view>
+    </navigator>
+  </view>
+</view>
+<view class="article"></view>

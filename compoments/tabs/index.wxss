@@ -1,0 +1,14 @@
+/* components/tabs/index.wxss */
+
+.tabs {
+  display: flex;
+}
+
+.tabs-item {
+  flex: 1;
+}
+
+.tabs-item.active {
+  background-color: #f00;
+  color: #fff;
+}

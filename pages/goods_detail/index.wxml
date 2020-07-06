@@ -1,0 +1,35 @@
+<swiper class="slider" autoplay circular indicator-dots indicator-active-color="#ea4350">
+  <swiper-item wx:for="{{ pics }}" wx:key="pisc_id">
+    <image class="slider_image" bindtap="showBigImage" current="{{item.pics_big}}" src="{{item.pics_big}}"></image>
+  </swiper-item>
+</swiper>
+<!-- 信息 -->
+<view class="information">
+  <view class="information_Price">${{goods_price}}</view>
+  <view class="information_right">
+    <view class="icon-fenxiang iconfont icon"></view>
+    <view class="icon-shoucang iconfont icon"></view>
+  </view>
+  <view class="information_in">{{goods_name}}</view>
+</view>
+<!-- 底部 -->
+<view class="box_dibu">
+  <view class="bottom_list">
+    <view class="bottom_list_icon">
+      <view class="iconfont icon-kefu">
+        <button open-type="contact" class="bottom_bar"></button>
+      </view>
+      <view class="icon_forn">联系客服</view>
+    </view>
+    <view class="bottom_list_icon">
+      <view class="iconfont icon-gouwuchekong"></view>
+      <view class="icon_forn" bindtap="goToPageCart">购物车</view>
+    </view>
+    <view class="gwc" bindtap="addToCart">加入购物车</view>
+    <view class="purchase">立即购买</view>
+  </view>
+</view>
+<!-- 详情 -->
+<view class="box">
+  <rich-text class="" nodes="{{goods_introduce}}"></rich-text>
+</view>

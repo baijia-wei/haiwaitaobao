@@ -1,0 +1,16 @@
+.search{
+  background-color: #EA4350;
+  height: 100prx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-in{
+  background-color: #fff;
+  width: 700rpx;
+  height: 80rpx;
+  border-radius: 5rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

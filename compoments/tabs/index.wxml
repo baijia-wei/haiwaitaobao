@@ -1,0 +1,8 @@
+<view class="tabs">
+  <block wx:for="{{ tabsData }}" wx:key="id">
+    <button data-index="{{ index }}" class="tabs-item {{activeIndex===index?'active':''}}" bindtap="changeIndexChild">
+      {{ item.name }}
+    </button>
+  </block>
+</view>
+<slot />

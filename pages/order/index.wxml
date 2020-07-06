@@ -1,0 +1,1 @@
+<tabs tabsData="{{tabsDataParent}}" bind:getTabsIndex="parentEventHandle"></tabs>

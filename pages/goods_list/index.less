@@ -1,0 +1,36 @@
+/* pages/goods_list/index.wxss */
+.tabcolumn {
+  display: flex;
+  &_in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 0 15rpx 15rpx 15rpx;
+    &.active {
+      font-weight: bold;
+      border-bottom: 2px solid crimson;
+    }
+  }
+}
+.floor {
+  margin-top: 20rpx;
+  display: flex;
+  &_information {
+    display: flex;
+    flex: 1;
+    font-size: 12px;
+    justify-content: space-between;
+
+    flex-direction: column;
+
+    .floor_price {
+      font-size: 12px;
+    }
+  }
+  .floor_image {
+    width: 191rpx;
+    height: 191rpx;
+    background-color: crimson;
+  }
+}

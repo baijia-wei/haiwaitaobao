@@ -1,0 +1,31 @@
+<view class="address" bindtap="getaddress">
+  <text wx:if="{{ address.userName }}" class="address_select" selectable>
+    <text class="">{{ address.addressDetail }}</text>
+    <text class="">{{ address.userName }} {{ address.telNumber }}</text>
+  </text>
+  <view wx:else>
+    <button type="warn" plain>选择地址</button>
+  </view>
+</view>
+<view>已选商品</view>
+<block wx:for="{{  cart  }}" wx:key="goods_id">
+  <view class="cart_item_right" wx:if="{{item.isSelect}}">
+    <!-- 调用自定义组件展示商品 -->
+    <goodslist item="{{ item }}" />
+    <!-- 商品计算器：定位上去 -->
+    <view class="count_group">
+      <view class="count_group_number">{{ item.count }}</view>
+    </view>
+  </view>
+</block>
+<view class="bottom">
+  <view class="bottom_left">
+    <view class="bottom_group">
+      <text>合计：</text>
+      <text class="bottom_group_price">{{totalPrice}}</text>
+    </view>
+  </view>
+  <view class="bottom_toPay {{ !address.userName ? 'disabled' : '' }}" bindtap="paycurren">
+    去支付({{selectCount}})
+  </view>
+</view>

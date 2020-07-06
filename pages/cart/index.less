@@ -1,0 +1,116 @@
+// 购物车商品展示
+.cart_item {
+  display: flex;
+  border-bottom: 1rpx solid var(--borderColor);
+  &_left {
+    width: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &_right {
+    flex: 1;
+    position: relative;
+    .count_group {
+      position: absolute;
+      right: 20rpx;
+      bottom: 20rpx;
+      display: flex;
+      align-items: center;
+      &_btn {
+        font-size: 44rpx;
+        color: var(--iconfontColor);
+      }
+      &_number {
+        // 利用最小宽实现列表对齐
+        min-width: 40rpx;
+        padding: 0 5rpx;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// 空购物车样式
+.cart_empty {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  // 透明度变成 0，用户看不见了
+  opacity: 0;
+  // 层级变成 -1，放到后面
+  z-index: -1;
+  transition: all 0.4s;
+  &.show {
+    opacity: 1;
+    z-index: 1;
+  }
+  &_image {
+    // 图片有点大，宽高都乘以某个比例缩小
+    width: 658rpx * 0.8;
+    height: 444rpx * 0.8;
+  }
+  &_btn {
+    padding: 20rpx;
+    border: 2rpx solid var(--borderColor);
+    border-radius: 100rpx;
+  }
+}
+
+// 底部栏
+.bottom {
+  width: 750rpx;
+  height: 82rpx;
+  background-color: #fff;
+  border-top: 1px solid var(--borderColor);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  &_left {
+    display: flex;
+    align-items: center;
+  }
+  &_group {
+    display: flex;
+    align-items: center;
+    margin-right: 20rpx;
+    &_text {
+      color: #666;
+      font-size: 80%;
+    }
+    &_price {
+      color: var(--pimaryColor);
+      &::before {
+        content: "¥";
+        font-size: 80%;
+      }
+    }
+  }
+  &_toPay {
+    min-width: 150rpx;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+    height: 52rpx;
+    border-radius: 30rpx;
+    color: #fff;
+    background-color: var(--pimaryColor);
+    font-size: 22rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

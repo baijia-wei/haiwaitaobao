@@ -1,0 +1,31 @@
+/* pages/user/index.wxss */
+.header {
+  height: 329rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .header_cent {
+  width: 172rpx;
+  display: flex;
+  flex-direction: column;
+}
+.header .header_cent .header_portrait {
+  border-radius: 50%;
+  justify-content: center;
+  width: 172rpx;
+  height: 172rpx;
+}
+.header .header_cent .text {
+  margin: 0 auto;
+}
+.mian .mian_auto {
+  display: flex;
+  justify-content: space-around;
+}
+.mian .mian_auto .iconfont {
+  font-size: 100rpx;
+}
+.mian .mian_auto .iconfont .font {
+  font-size: 14px;
+}

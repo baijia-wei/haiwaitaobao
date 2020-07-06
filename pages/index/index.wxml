@@ -1,0 +1,38 @@
+<!-- 1.0 自定义封装的搜索框组件 components/search 中封装的 -->
+<search />
+<!-- 2.0 轮播图 -->
+<swiper class="slider" autoplay circular indicator-dots indicator-active-color="#ea4350">
+		<swiper-item wx:for="{{ swiperData }}" wx:key="goods_id">
+				<image class="slider_image" src="{{ item.image_src }}"></image>
+		</swiper-item>
+</swiper>
+<!-- 3.0 首页导航入口 -->
+<view class="entry">
+		<!-- block 是一个空标签，最终不会显示到页面中，但是他身上是可以写循环和条件指令的 -->
+		<block wx:for="{{ navData }}" wx:key="name">
+				<!-- 跳转方式1：直接通过 navigator -->
+				<!-- <navigator url="{{ item.navigator_url }}" open-type="{{ item.open_type }}">
+        <image class="entry_image" src="{{ item.image_src }}" />
+      </navigator> -->
+				<!-- 跳转方式2：通过 JS API 实现 -->
+				<!-- 给图片添加点击事件，再把数据作为参数传递 -->
+				<image class="entry_image" bindtap="goToPage" data-item="{{ item }}" src="{{ item.image_src }}" />
+		</block>
+</view>
+<!-- 4.0 商品楼层 -->
+<view class="floor">
+		<!-- wx:key 如果要实现最好的效果，要写一个合理的 key 值 -->
+		<block wx:for="{{ floorData }}" wx:key="id">
+				<!-- 楼层标题 -->
+				<view class="floor_head">
+						<image class="floor_head_image" src="{{ item.floor_title.image_src }}" />
+				</view>
+				<!-- 楼层主体 -->
+				<view class="floor_body">
+						<block wx:for="{{ item.product_list }}" wx:key="name" wx:for-item="item2">
+								<!-- 把数据返回的宽度，绑定到行内样式中，让每张图片的宽度都不一样 -->
+								<image class="floor_body_image" style="width:{{ item2.image_width + 'rpx' }}" src="{{ item2.image_src }}" />
+						</block>
+				</view>
+		</block>
+</view>

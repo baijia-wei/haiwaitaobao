@@ -1,0 +1,63 @@
+// 2.0 商品分类主体
+.category {
+  display: flex;
+  .category_left {
+    width: 182rpx;
+    // 做局部竖向滚动的盒子，小程序中要求书写固定高度
+    // calc()  是CSS3 提供的计算功能，小程序和网页中都支持，允许不同单位的运算
+    height: calc(100vh - 100rpx);
+    background-color: hsl(0, 0%, 95%);
+    .category_left_item {
+      // width: 182rpx;
+      height: 80rpx;
+      font-size: 28rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // active 嵌套写的话，记得加 & 符号
+      &.active {
+        color: var(--pimaryColor);
+        position: relative;
+        &::before {
+          content: "";
+          width: 4rpx;
+          height: 60%;
+          // currentColor 当前文字颜色关键词
+          background-color: currentColor;
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .category_right {
+    height: calc(100vh - 100rpx);
+    // 做局部竖向滚动的盒子，小程序中要求书写固定高度
+    // ~"" 输出源数据，了解即可。在 less 文件中不同单位运算有问题，这里防止出bug，输出源数据。
+    flex: 1;
+    .category_right_title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .category_right_list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .category_right_item {
+      width: 33.33%;
+      display: flex;
+      // 改变主轴方向
+      flex-direction: column;
+      font-size: 24rpx;
+      justify-content: center;
+      padding: 20rpx 0;
+      align-items: center;
+    }
+    .category_right_image {
+      width: 120rpx;
+      height: 120rpx;
+    }
+  }
+}

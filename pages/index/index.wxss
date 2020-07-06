@@ -1,0 +1,34 @@
+/* 2.0 轮播图模块，类名是自己起的 */
+/* 小程序无需通过 scoped 划分样式作用域，因为小程序本身样式就是每个页面独立的 */
+.slider,
+.slider_image {
+  width: 750rpx;
+  height: 340rpx;
+}
+.entry {
+  display: flex;
+  justify-content: space-around;
+  padding: 12rpx 0 42rpx;
+}
+.entry .entry_image {
+  width: 128rpx;
+  height: 140rpx;
+}
+.floor .floor_head .floor_head_image {
+  width: 750rpx;
+  height: 60rpx;
+}
+.floor .floor_body {
+  overflow: hidden;
+}
+.floor .floor_body .floor_body_image {
+  float: left;
+  width: 232rpx;
+  height: 188rpx;
+  margin-left: 15rpx;
+  margin-bottom: 15rpx;
+}
+.floor .floor_body .floor_body_image:nth-child(1) {
+  width: 232rpx;
+  height: 386rpx;
+}

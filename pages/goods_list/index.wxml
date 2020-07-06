@@ -1,0 +1,18 @@
+<search />
+<view class="tabcolumn">
+  <view class="tabcolumn_in {{ activeIndex === index ? 'active' : '' }}" wx:for="{{thien}}" bindtap="changeTabIndex" data-index="{{index}}" wx:key="{{id}}">
+    {{item.item}}
+  </view>
+</view>
+<!-- <block c wx:for="{{goodsList}}" wx:key="goods_id">
+  <navigator class="floor" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+  <image src="{{item.goods_small_logo}}" alt="" class="floor_image" />
+  <view class="floor_information">
+    <view class="floor_details">{{item.goods_name}}</view>
+    <view class="floor_price">{{item.goods_price}}</view>
+  </view>
+</navigator>
+</block> -->
+<block c wx:for="{{goodsList}}" wx:key="goods_id">
+  <goodslist item="{{item}}" />
+</block>
